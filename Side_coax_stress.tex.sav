@@ -46,7 +46,7 @@ Using NIST's database, the temperature-dependent CTE of OFHC Copper was found. T
 \begin{wrapfigure}{r}{9cm}
 \includegraphics[width = .5\textwidth]{CTE_ofhc_copper_plot.png}
 \includegraphics[width = .5\textwidth]{CTE_nbti_plot.png}
-\caption{Temperature-dependent Coefficient of thermal expansion for OFHC Copper and NbTi. The NbTi coefficient of thermal expansion was inferred from the formula for total contraction of NbTi, which explains its inaccuracy at very low temperatures. At higher temperatures, however, the curve is believable.}
+\caption{Temperature-dependent Coefficient of thermal expansion for OFHC Copper and NbTi}
 \end{wrapfigure}
 
 The equation for the thermal contraction coefficient could then be integrated from 300K to 4K (the lowest data range for the equation) to get total fractional contraction.
@@ -68,7 +68,7 @@ where $CTE_{\parallel}$ is measured with the grain, and $CTE_{\perp}$ against th
 
 \subsection{Tension from Fabrication}
 
-The NbTi wires are soldered under tension to prevent loss of tension (and shorts) at operation temperature. This is done with two 30g weights - one hung at either end - for a total of 60g. Dividing by the cross-section of the wires, we get a stress of $805MPa$. The Modulus of Elasticity, $E$, for our Nb-47Ti (47\% Ti by weight) is $75.15GPa$. Using this, we get a strain of,
+The NbTi wires are soldered under tension to prevent loss of tension (and shorts) at operation temperature. This is done with two 30g weights - one hung at either end - for a total of 60g. Dividing by the cross-section of the wires, we get a stress of $805MPa$. The Modulus of Elasticity, $E$, for our Nb-47Ti (47\% Ti by weight) is $75.15GPa$ (this information was provided by the manufacturer). Using this, we get a strain of, 
 $$
 Strain = \frac{Stress}{E} = \frac{75.15e9}{805e6} = 0.0107 \ or \ 1.07\%
 $$
@@ -90,7 +90,7 @@ L_{eq} = L_{NbTi} \cdot (1 - 0.0107 - |\Delta L_{NbTi}|)
 $$
 where $\Delta L_{Cu}$ is the total contraction of the copper whose length is given in figure 1, $\Delta L_{Tube}$, is the graphite tube contraction, $\Delta L_{NbTi}$ is the NbTi contraction, and $L_{NbTi}$ is the original length of the wires at 300K (3.54cm in this case). Multiplying by $1 - 0.0107$ gives the length at 300K without the fabrication tension. Putting these into the strain equation gives $1.05 \%$ strain. From this we find,
 $$
-Stress = E \cdot Strain = 75.15e9 \cdot 0.0105 = 791MPa
+Stress = E \cdot Strain = 75.15e9 \cdot 0.0105 = 791 \ MPa
 $$
 
 \section{Stress on 1K - 40mK Span Coax}
@@ -113,23 +113,9 @@ L_{eq} = L_{NbTi} \cdot (1 - 0.0107 - |\Delta L_{NbTi}|)
 $$
 with the same designations as before. Putting these into the strain equation gives $\approx 2.13 \%$ strain. This will be slightly less (about $2\%$) if the low CTE for graphite is used. From this we find,
 $$
-Stress = E \cdot Strain = 75.15e9 \cdot 0.0213 = 1604MPa
+Stress = E \cdot Strain = 75.15e9 \cdot 0.0105 = 1604 \ MPa
 $$
 
 This stress is much higher than the 5K - 1K coax stress. This is expected due to the short length of the wires for this span, as well as the large length of copper which is contracting. Though there is also a large length of graphite, its low CTE means it won't affect the total stress significantly.
-
-\section{Acceptability of Stresses}
-
-To see whether these loads are acceptable or not, we must know the yield strength for our NbTi alloy at base temperature. Our alloy, provided by Tekdata, is 47\% by weight Ti, which corresponds to 36.75\% \emph{Niobium} in atomic percentage. Yield strengths for similar alloys were found in the literature to range from 1230 MPa (34\% atm Nb, cold-worked) to 1750 MPa (39\% atm Nb, cold-worked and heat-treated) at 4.2K.
-
-\begin{figure}[h]
-\centering
-\includegraphics[width = .7\textwidth]{NbTi_stress.png}
-\caption{Stress v. Strain curve for Tekdata's Nb-47Ti (wt \%) alloy at room temperature. The maximal stresses/strains at base temperature are shown for the 5K-1K coax and 1K-40mK coax by a dot-dashed and a dashed line respectively. The range of yield strengths for similar alloys (and their corresponding strains) are given by the hatched region in the plot. We see that the 1K-40mK line may be exceeding its yield strength at base.}
-\end{figure}
-
-The room temperature stress v. strain curve for our specific NbTi alloy is shown in Figure 3. The range of yield strengths is shown in the hatched region. We see that the 5K - 1K coax is well below either yield strength; however, the 1K - 40mK coax stress falls well into the range for yield strengths of similar compositions.
-
-To know for sure whether this is a real issue in our tower, we would need to 1), obtain the yield strength for our specific alloy/thermo-mechanical preparation and 2), find the modulus of elasticity at low temperatures for our alloy. However, the first order approximation for yield limits is definitely worrisome.
 
 \end{document}
